@@ -1,0 +1,9 @@
+type=mlp;		# tinklo tipas - mlp (kol kas sis tipas tik ir yra)
+act=sigmoid;		# aktyvacijos funckija - sigmoidine 
+neurons=2,2,1;		# tai triju sluoksniu perceptronas: 2 neuronai iejimo,2 pasleptame ir 1 isejimo sluoksnyje
+eta=0.25;		# pradinis mokymo greitis 0.25
+epsilon=0.01;		# leistina MSE klaida 0.01
+maxiter=10000;		# leistinas iteraciju per kurias turi ismokti skaicius 10000
+patterns=4;		# 4 mokymo pavyzdziai
+data=data.xor;		# mokymo duomenys faile data.xor (xor teisingumo lentele)
+

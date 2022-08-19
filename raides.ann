@@ -1,0 +1,8 @@
+type=mlp;
+act=sigmoid;
+neurons=16,40,1;
+maxiter=1000;
+epsilon=0.01;
+eta=0.25;
+patterns=1000;
+data=letters/data.txt;

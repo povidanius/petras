@@ -1,0 +1,3 @@
+c++ -o petras main.cpp
+./petras -i
+

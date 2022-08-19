@@ -1,0 +1,13 @@
+# This file represents neural network for smile in bmp file recognition.
+# 
+#
+#
+type=mlp;
+act=sigmoid;
+neurons=27,10,1;
+epsilon=0.01;
+eta=0.3;
+maxiter=5000;
+graph=on;
+patterns=321;
+data=data.txt;		# change this to corretct path !
