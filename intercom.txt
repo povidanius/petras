@@ -1,0 +1,95 @@
+    		    Interactive menu commands
+		    
+Note: all commands are case sensitive and not 0x20 sensitive.
+      		    
+a  filename	      - alives saved NN from filename and sets its index.
+mp  N X1 X2 ... Xn - creates N-layer perceptron with X1 neurons in 0 
+			(input) layer,X2 neurns ir 1-st,..,and Xn in N-1
+			(output) layer.This perceptron uses SIGMOID() 
+			activation with ALFA and default ETA;all stuff
+			defined in mlp.cpp.After creation index number is
+			asigned to NN and NN is placed in array.			
+d N	    	      - marks non active N-th network.				
+exit		      - exits from interactive menu.				
+help,?		      - executes HELPCMD.			
+i N filename          - loads to N-th NN input layer data from filename. 				
+o N	      	      - propagates N-th NN and printf its output. 	
+r N		      - randomizes synaptic weights or N-th NN.	
+s N filename (f)      - save N-th net to filename.If filename exists f
+                        is required to overwrite filename.
+sim N filename	      - simulates trained net with index N using data in filename. 	
+shell                 - executes SHELLCMD.
+show		      -	shows all active neural networks.
+t filename	      -	trains .ann "script" and assigns new index.
+w		      - shows all synaptic weights.
+
+Examples:
+============= CREATING AND CONFIGURING PERCEPTRONS =====================
+------------------------------------------------------------------------
+mlp > mp 3 2 2 1
+
+creates 3 layer perceptron.In 0-th (input) layer 2 neurons,int 1-sh (hidden) 
+layer 2 neurons and int 2-th (Output) layer - 1 neuron as shown in diagram:
+
+		            BIAS
+    			     |    
+	     +----+	   +----+	 BIAS
+        ---- |    |--------|    |-----,   |
+	     +----+`\  /---+----+      \+----+   Output
+  Input		     *		        |    |--->
+	     +----+/    \ _+----+      /+----+
+	---- |    |--------|    |-----'	
+	     +----+	   +----+
+	       		     |
+			    BIAS	      
+
+	       0	     1		  2
+	     layer         layer        layer 
+	     
+Lets say that our net index,returned by create is 9.
+To train network you must first randomize weights.This is done by typing:
+-------------------------------------------------------------------------
+petra$	r 9
+
+This network,for example,has 9 weights: 
+w(1,1,0),w(1,1,1),w(1,1,2);w(1,2,0),w(1,2,1),w(1,2,2); w(2,1,0),w(2,1,1),w(2,1,2).
+Input (0-th) layer neurons dosn't have 'real' weights as their only objective is to transfer 
+data to hidden (1-th) layer neurons.
+-------------------------------------------------------------------------
+=========== TRAINING AND USING PERCEPTRONS =============================
+-------------------------------------------------------------------------
+petra$ t test.ann
+
+This command trains perceptron describend in *.ann script and assigns new
+net index,or reports failture if impossible.In *.ann files are information
+about net structure and training data with desired outputs.For details see
+*.ann manual or program source.
+
+petra$ s 1 saved_net.w
+
+Obviously this command saves net with index 1 to file save_net.w. If this
+file exists,error is returned.In this case 4-th option f required:
+mlp > s 1 saved_net.w f
+In *.w files net configuration and weights is stored.
+
+If net once is saved,you can alive it.Aliving command syntax is:
+
+petra$ a saved_net.w
+
+New net index is or failture is returned.
+
+If you have trained net with index 1 and data file test.txt you may want
+simulate this net with your data.This is done by typing:
+
+petra$ sim 1 test.txt
+
+Note: If net index is present,it means it is active
+and you can manipulate with this network.
+------------------------------------------------------------------------
+
+Good luck in your research !
+
+
+
+
+

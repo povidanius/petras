@@ -1,0 +1,14 @@
+-- Petras session started (pid = 2812) --- 
+
+Going Interactive() 
+
+MSE[0] = 0.131103 
+
+MSE[100] = 0.122533 
+
+MSE[200] = 0.094590 
+
+MSE[300] = 0.036063 
+
+MSE[400] = 0.015971 
+

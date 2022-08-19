@@ -1,0 +1,14 @@
+#
+#  Genu analize @1
+#
+#  Iejimo vektorius - A,C,G,T,Geno(tarpo) ilgis
+#
+#
+type=mlp;
+act=sigmoid;	
+neurons=4,15,1;	
+eta=0.25;	
+epsilon=0.01;	
+maxiter=10000;
+patterns=60;		
+data=rez.dat;
